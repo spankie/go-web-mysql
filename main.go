@@ -3,12 +3,12 @@ package main
 import (
 	"net/http"
 
-	"github.com/spankie/go-web/db"
+	"github.com/spankie/go-web-mysql/db"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	log "github.com/sirupsen/logrus"
-	"github.com/spankie/go-web/handlers"
+	"github.com/spankie/go-web-mysql/handlers"
 )
 
 func main() {
