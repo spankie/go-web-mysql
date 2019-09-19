@@ -12,7 +12,7 @@ func init() {
 	// Open up our database connection.
 	// I've set up a database on my local machine using phpmyadmin.
 	// The database is called testDb
-	DB, err := sql.Open("mysql", "root:password1@tcp(127.0.0.1:3306)/test")
+	db, err := sql.Open("mysql", "root:@tcp(127.0.0.1:3306)/test")
 
 	// if there is an error opening the connection, handle it
 	if err != nil {
@@ -21,17 +21,8 @@ func init() {
 
 	// defer the close till after the main function has finished
 	// executing
-	defer DB.Close()
-
-	// perform a db.Query insert
-	insert, err := DB.Query("INSERT INTO test VALUES ( 2, 'TEST' )")
-
-	// if there is an error inserting, handle it
-	if err != nil {
-		panic(err.Error())
-	}
-	// be careful deferring Queries if you are using transactions
-	defer insert.Close()
+	// defer DB.Close()
+	DB = db
 }
 
 func GetDB() *sql.DB {
