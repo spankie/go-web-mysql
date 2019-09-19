@@ -6,8 +6,13 @@
         <link rel="stylesheet" href="/assets/css/tachyons.min.css">
     </head>
     <body class="code">
-        <header class="tc pa3 blue"><h1>Hello World!</h1></header>
+        <header class="tc pa3 blue">
+          <h1>Hello World!</h1>
+          <a href="/">Home</a>
+        </header>
         <article class="pa4 black-80">
+          <p>Email: {{.Email}}</p>
+          <p>Password: {{.Password}}</p>
             <form action="/signup" method="POST" accept-charset="utf-8">
               <fieldset id="sign_up" class="ba b--transparent ph0 mh0">
                 <legend class="ph0 mh0 fw6 clip">Sign Up</legend>
